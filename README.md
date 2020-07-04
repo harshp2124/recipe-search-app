@@ -1,6 +1,6 @@
 # Recipe Search
 
-It is a simplified App for required recipes through an API.
+It is a simplified App for searching recipes through an API.
 
 ---
 
