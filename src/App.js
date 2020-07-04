@@ -58,11 +58,7 @@ const App = () => {
                 image={recipe.recipe.image}
                 ingredients={recipe.recipe.ingredients}
               />
-            ) : (
-              <div>
-                <p>Please wait!</p>
-              </div>
-            )
+            ) : null
           )
         ) : (
           <div>
