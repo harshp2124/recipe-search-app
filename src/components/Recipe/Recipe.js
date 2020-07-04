@@ -7,7 +7,9 @@ function Recipe(props) {
       <h1>{props.title}</h1>
       <ul className={style.ingredients}>
         {props.ingredients.map((ingredient) => (
-          <li>{ingredient.text}</li>
+          <div>
+            <li>{ingredient.text}</li>
+          </div>
         ))}
       </ul>
       <img className={style.image} src={props.image} alt={props.title} />
