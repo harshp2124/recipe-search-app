@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Recipe from "./components/Recipe/Recipe";
 import { getRecipe } from "./api/index";
-import "./App.css";
+import style from "./App.module.css";
 
 const App = () => {
   const [recipes, setRecipes] = useState([]);
@@ -18,27 +18,27 @@ const App = () => {
   }, []);
 
   return (
-    <div className="App">
-      <div>
+    <div className={style.App}>
+      <div className={style.searchForm}>
         <input
-          className="search-bar"
+          className={style.searchBar}
           type="text"
           id="queryName"
           placeholder={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button className="search-button" onClick={() => fetchRecipes()}>
+        <button className={style.searchButton} onClick={() => fetchRecipes()}>
           Search
         </button>
       </div>
-      <div>
+      <div className={style.recipes}>
         {recipes.length !== 0 ? (
           recipes.map((recipe) => (
             <Recipe
               key={recipe.recipe.label}
               title={recipe.recipe.label}
-              calories={recipe.recipe.calories}
               image={recipe.recipe.image}
+              ingredients={recipe.recipe.ingredients}
             />
           ))
         ) : (
